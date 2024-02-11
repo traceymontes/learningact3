@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <title>A grading program</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        // declare the variables
+        var a;
+        var b;
+        var c;
+        var d;
+        var ave;
+        var g;
+        var m;
+
+        //get the values from the user
+        a = prompt("Please enter your grade in the first quarter", 0);
+        b = prompt("Please enter your grade in the second quarter", 0);
+        c = prompt("Please enter your grade in the third quarter", 0);
+        d = prompt("Please enter your grade in the fourth quarter", 0);
+        //compute the average
+        ave = (parseFloat(a) + parseFloat(b) + parseFloat(c) + parseFloat(d)) / 4;
+
+        //determine the letter grade and store it to variable g
+        if (ave >= 95) {
+            g = "A";
+        }
+        else if (ave >= 90 && ave < 95) {
+            g = "A-";
+        }
+        else if (ave >= 85 && ave < 90) {
+            g = "B+";
+        }
+        else if (ave >= 80 && ave < 85) {
+            g = "B";
+        }
+        else if (ave >= 75 && ave < 80) {
+            g = "B-";
+        }
+        else {
+            g = "C";
+        }
+        //determine the message and store it in variable m
+        switch (g) {
+            case "A":
+                m = "OUTSTANDING!";
+                break;
+            case "A-":
+                m = "EXCELLENT";
+                break;
+            case "B+":
+                m = "VERY GOOD";
+                break;
+            case "B":
+                m = "GOOD";
+                break;
+            case "B-":
+                m = "SATISFACTION";
+                break;
+            case "C":
+                m = " PASS";
+                break;
+            default:
+                m = "FAIL";
+        }
+        //display the results
+        document.write("<h1>", m, "</h1>");
+        document.write("Your first quarter grade is ", a);
+        document.write("<br/>Your second quarter grade is ", b);
+        document.write("<br/>Your third quarter grade is ", c);
+        document.write("<br/>Your fourth quarter grade is ", d);
+        document.write("<br/>Your <b>average</b> ", ave.toFixed(2));
+        document.write("<br/>Your <b>letter grade</b> ", g);
+    </script>
+</body>
+</html>
